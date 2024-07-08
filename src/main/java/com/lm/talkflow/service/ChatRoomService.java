@@ -15,7 +15,7 @@ public class ChatRoomService {
 
     public Optional<String> getChatRoomId(String senderId, String recipientId, boolean createNewRoomIfNotExists) {
         return repository.findBySenderIdAndRecipientId(senderId, recipientId)
-                .map(ChatRoom::getId)
+                .map(ChatRoom::getChatId)
                 .or(() -> {
                    if (createNewRoomIfNotExists) {
                         var chatId = createChatId(senderId, recipientId);
