@@ -18,11 +18,4 @@ COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-ENV MONGO_URL=mongodb://mongo:muQcgcusjPXFpCxFkjzfjbOjBsWRPKYJ@roundhouse.proxy.rlwy.net:36842
-ENV MONGOUSER=mongo
-ENV MONGOPASSWORD=muQcgcusjPXFpCxFkjzfjbOjBsWRPKYJ
-ENV MONGOHOST=roundhouse.proxy.rlwy.net
-ENV MONGOPORT=36842
-ENV MONGO_DBNAME=test
-
 ENTRYPOINT ["java", "-jar", "app.jar"]
